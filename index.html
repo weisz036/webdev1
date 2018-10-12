@@ -1,29 +1,67 @@
+<!--
+    This is lesson one of a three part series introducing web mapping using leaflet.
+    It is based on the tutorial from Maptime Boston (https://maptimeboston.github.io/leaflet-intro/)
+-->
+
+<!-- <HTML> The start of our html document; everything goes in here -->
 <html>
+<!-- <HEAD> the head is not displayed in the browser; 
+    rather, it provides the metadata for the page (telling the browser how to render it-->
+
 <head>
-  <title>A Leaflet map!</title>
-  <link rel="stylesheet" href="./Leaflet-1.0.3/leaflet.css"/>
-  <script src="./Leaflet-1.0.3/leaflet.js"></script>
-  <style>
-    #map{ height: 100% }
-  </style>
+    <title>A Leaflet map!</title>
+
+    <!-- Linking to our external resources (ie. Leaflet in this case) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+
+    <!-- CSS Styling Start-->
+    <!-- 
+    ** FIXME **
+    Notice that there is a small border around the map. 
+    Alter the CSS so that the map fills the entire page. Hint: try searching 
+    online for "full screen leaflet map" or something to that effect.
+    -->
+    <style>
+        #map { height:100%; }
+    </style>
 </head>
+
+<!-- <BODY> The content that is rendered on the web page -->
+
 <body>
+    
+    <!--
+    ** FIXME **
+    Add a nice header to the top of the page. 
+    Style this header however you like but make sure to include at least the
+    following items:
+        - Map title
+        - Course information (course name, your name, etc.)
+        - A link to https://leafletjs.com using the text: "I built this with Leaflet"
+    -->
 
-  <div id="map"></div>
+    <!-- the container for our map -->
+    <div id="map"></div>
 
-  <script>
+    <!-- 
+    Javascript! Hurray! The script for our webpage is placed down here since we
+    want the DOM (page objects) to load first and then have our script come in
+    that alters the content of the page (in this case adding a map)
+    ref: https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup
+    -->
+    <script>
+        // initialize the map
+        var map = L.map('map').setView([42.35, -71.08], 13);
 
-  // initialize the map
-  var map = L.map('map').setView([42.35, -71.08], 13);
+        // load a tile layer
+        L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
+            attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+            maxZoom: 17,
+            minZoom: 9
+        }).addTo(map);
 
-  // load a tile layer
-  L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
-    {
-      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-      maxZoom: 17,
-      minZoom: 9
-    }).addTo(map);
-
-  </script>
+    </script>
 </body>
+
 </html>
