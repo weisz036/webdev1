@@ -3,6 +3,12 @@
 ### Introduction
 You will be forking this repository, making updates to the code, and then pushing it up to your own repository.
 
+### Resources
+**Note: Be sure that you are giving proper citation if you re-used code that others have created**  
+Some code citation resources:
+ - [MIT Writing Code](https://integrity.mit.edu/handbook/writing-code)
+ - [How to Cite Code, University of Arkansas](http://www.eat.lth.se/fileadmin/certec/Hector/How_to_cite_code.pdf)
+
 ### Task
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own Github account
 ![fork image](https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png)
